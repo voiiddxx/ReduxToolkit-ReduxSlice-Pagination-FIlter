@@ -74,7 +74,9 @@ const User = () => {
                 </div>
                 
             </div>
-            <div className="filter"></div>
+            <div className="filter">
+                <p>Filter</p>
+            </div>
         </div>
     </div>
   )
