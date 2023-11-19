@@ -1,15 +1,15 @@
 import React from 'react'
-import Sidenav from "../../components/Nav/Sidenav"
-
+import "./Home.css"
+import HeroUpper from '../../components/Home/HeroUpper'
 const Home = () => {
   return (
-    <div className="home-main">
-        <div className="home-left-sidebar">
-            <Sidenav/>
-        </div>
-        <div className="home-mid-users-hero"></div>
-        <div className="home-right"></div>
-    </div>
+   <>
+   <div className="home-main">
+   <div className="upper-home-hero">
+    <HeroUpper/>
+   </div>
+   </div>
+   </>
   )
 }
 
