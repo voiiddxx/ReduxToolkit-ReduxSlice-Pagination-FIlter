@@ -1,0 +1,105 @@
+.team-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+
+.team-heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-heading h2{
+    font-size: 18px;
+    font-family: 'Manrope', sans-serif;
+    color: rgb(45, 45, 45);
+}
+.team-heading P{
+    font-size: 15px;
+    color: rgb(73, 73, 73);
+    font-family: 'Manrope', sans-serif;
+    margin-top: -10px;
+    text-align: center;
+    text-wrap: balance;
+}
+
+
+.team-card{
+    margin-top: 25px;
+    height: 200px;
+    width: 300px;
+    /* background-color: rgb(242, 242, 242); */
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    overflow: hidden;
+}
+
+.team-card-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.team-text{
+    padding-left: 20px;
+    padding-top: 15px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.team-text h1{
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    color: rgb(46, 46, 46);
+    font-weight: 800;
+}
+
+.team-text p{
+    margin-top: -10px;
+    font-size: 13px;
+}
+
+.member{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: -10px;
+}
+.member p{
+    margin-top: 10px;
+
+}
+
+.team-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-button-text{
+    height: 30px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    color: rgb(40, 40, 40);
+    border: 1px solid rgb(54, 54, 54);
+    margin-left: 120px;
+}
+
+.team-button-text p{
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+
