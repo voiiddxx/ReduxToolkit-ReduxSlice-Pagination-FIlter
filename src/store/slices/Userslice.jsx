@@ -1,4 +1,4 @@
-import { createSlice, configureStore } from '@reduxjs/toolkit'
+import { createSlice} from '@reduxjs/toolkit'
 
 const UserSlice = createSlice({
     name:'user',
@@ -14,6 +14,15 @@ const UserSlice = createSlice({
     }
 });
 
-export const {getUser , onNextPage} = UserSlice.actions;
+const TeamSlice = createSlice({
+    name:'team',
+    initialState:[],
+    reducers:{
+        GetTeam(state , action){
+            state.push(action.payload);
+        }
+    }
+})
 
+export const {getUser , onNextPage} = UserSlice.actions;
 export default UserSlice.reducer;

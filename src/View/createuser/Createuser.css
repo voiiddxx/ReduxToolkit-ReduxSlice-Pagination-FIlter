@@ -37,7 +37,7 @@
     margin-top: 15px;
     height: 45px;
     padding-left: 15px;
-    width: 80%;
+    width: 95%;
     outline: none;
     border: none;
     background-color: rgb(239, 239, 239);
@@ -114,7 +114,7 @@ select option{
 
 .submit-button{
     height: 40px;
-    width: 80%;
+    width: 95%;
     background-color: rgb(26, 26, 26);
     margin-top: 15px;
     border-radius: 3px;
@@ -131,7 +131,7 @@ select option{
 @media screen and (max-width: 480px) {
     .create-user-main{
         width: 80%;
-        left: 10%;
+        left: 5%;
     }
     .dropdown select{
         height: 50px;

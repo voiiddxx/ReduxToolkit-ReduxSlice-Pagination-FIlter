@@ -35,13 +35,16 @@
 
 .row{
     height: 80px;
-    padding-right: 10px;
+    padding-right: 5px;
     border-radius: 5px;
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     font-family: 'Manrope', sans-serif;
-    gap: 15px;
+    gap: 5px;
+    
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;  
+    
 }
 .row img{
     height: 50px;
@@ -55,6 +58,10 @@
     font-size: 18px;
     color: blue;
 }
+
+.user-bottom{
+    margin-top: 50px;
+}
 .page{
     display: flex;
     align-items: center;
@@ -66,19 +73,23 @@
 }
 
 .decrement{
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     border-radius: 5px;
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(42, 42, 42);
+    color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .increment{
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     border-radius: 5px;
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(42, 42, 42);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,6 +112,7 @@
 
 
 .filter-container{
+    margin-top: 15px;
     height: 80px;
     width: 100%;
     display: flex;
@@ -122,9 +134,8 @@
 
 .filter-modal{
     margin-top: 30px;
-    
     width: 20%;
-    background-color: rgb(227, 224, 224);
+    background-color: rgb(255, 255, 255);
     position: absolute;
     margin-left: 100px;
     border-radius: 10px;

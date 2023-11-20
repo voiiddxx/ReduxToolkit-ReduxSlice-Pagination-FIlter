@@ -160,18 +160,18 @@ const User = () => {
                     }
                     fetchPaginationUser(pageNo-1 , domain , gender , available);
                 }} className="increment">
-                    <h2>-</h2>
+                    <h3>-</h3>
                 </div>
                 
                 <div className="page_no">
-                    <h2>{pageNo}</h2>
+                    <h3>{pageNo}</h3>
                 </div>
                 <div onClick={()=>{
                     setpageNo(pageNo+1);
 
                     fetchPaginationUser(pageNo+1 , domain , gender , available);
                 }} className="decrement">
-                    <h1>+</h1>
+                    <h3>+</h3>
                 </div>
                
                 
