@@ -35,7 +35,7 @@
 
 .row{
     height: 80px;
-    width: 450px;
+    padding-right: 10px;
     border-radius: 5px;
     background-color: rgb(243, 243, 243);
     display: flex;
@@ -229,6 +229,25 @@
     font-weight: 500;
 }
 
+.sales:active{
+    background-color: black;
+    color: white;
+}
+.management:active{
+    background-color: black;
+    color: white;
+}
+.it:active{
+    background-color: black;
+    color: white;
+}
+
+.finance:active{
+    background-color: black;
+    color: white;
+}
+
+
 
 
 .sales{
@@ -310,7 +329,7 @@
 
 @media screen and (max-width: 480px) {
     .row{
-        width: 100%;
+        width: 80%;
     }
 
     .filter-modal{

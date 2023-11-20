@@ -6,24 +6,17 @@ import "../Filter/Filter.css"
 
 import axios from "axios"
 const User = () => {
-          const data = useSelector((state)=> state.user);
-          const [ViewFilterOption, setViewFilterOption] = useState(false);
+        const data = useSelector((state)=> state.user);
+        const [ViewFilterOption, setViewFilterOption] = useState(false);
         const dispatch = useDispatch();
         const [pageNo, setpageNo] = useState(1);
-
         const [domain, setdomain] = useState("");
         const [gender, setgender] = useState("");
         const [available, setavailable] = useState("");
-
-
-
-    
         
 
-   
 
-      const fetchPaginationUser = async(pageNo , domain , gender , available)=>{
-
+        const fetchPaginationUser = async(pageNo , domain , gender , available)=>{
         try {
             const response = await axios.get("https://heliverse-assignment-server.onrender.com/api/users/?page="+pageNo+"&domain="+domain+"&gender="+gender+"&available="+available);
             console.log(response.data);
@@ -32,14 +25,12 @@ const User = () => {
             console.log(error);
         }
       }
-
-        useEffect(()=>{
+     useEffect(()=>{
             fetchPaginationUser(1 , domain , gender , available);
         } , []);
 
 
        const handleSubmit =(domain , gender , available)=>{
-        
         fetchPaginationUser(1 , domain , gender , available);
             console.log(domain , gender , available);
         }
@@ -105,15 +96,29 @@ const User = () => {
                         <p>Available</p>
                     </div>
                     <div onClick={()=>{
-                        setdomain(false)
+                        setavailable(false)
                     }} className="management">
                         <p>Unavailable</p>
                     </div>
                     
                 </div>
 
+                {
+                    gender!=""? <p>{gender}</p> :  <p></p>
+                }
+                {
+                    domain!=""? <p>{domain}</p> :  <p></p>
+                }
+                {
+                    available===true? <p>Available</p> :  <p></p>
+                }
+                {
+                    available===false ? <p>Unavailabe</p> :  <p></p>
+                }
+
                <div className="filter-buttons">
                <div onClick={()=>{
+                setViewFilterOption(false)
                 handleSubmit(domain , gender , available);
                }} className="filter-submit-button">
                     <p>Submit</p>
@@ -144,7 +149,7 @@ const User = () => {
                 <p>Female</p>
                 <p>{curr.available}</p>
             </div>
-            }) : <h1>Data Loadin Please wait</h1>
+            }) : <p>Loadin Please Wait</p>
           }
         </div>
         <div className="user-bottom">
@@ -153,7 +158,7 @@ const User = () => {
                     if(pageNo>1){
                         setpageNo(pageNo-1);
                     }
-                    fetchPaginationUser(pageNo-1);
+                    fetchPaginationUser(pageNo-1 , domain , gender , available);
                 }} className="increment">
                     <h2>-</h2>
                 </div>
@@ -163,8 +168,8 @@ const User = () => {
                 </div>
                 <div onClick={()=>{
                     setpageNo(pageNo+1);
-                    console.log(pageNo);
-                    fetchPaginationUser(pageNo+1);
+
+                    fetchPaginationUser(pageNo+1 , domain , gender , available);
                 }} className="decrement">
                     <h1>+</h1>
                 </div>

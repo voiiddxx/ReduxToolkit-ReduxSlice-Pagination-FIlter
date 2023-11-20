@@ -17,11 +17,12 @@ const Home = () => {
    <div className="upper-home-hero">
     <HeroUpper/>
    </div>
-   <div className="team">
-    <Team/>
-   </div>
+  
    <div className="user">
     <User/>
+   </div>
+   <div className="team">
+    <Team/>
    </div>
    </div>
    </>
