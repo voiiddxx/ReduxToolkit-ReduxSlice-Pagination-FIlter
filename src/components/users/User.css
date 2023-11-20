@@ -100,9 +100,221 @@
 }
 
 
+.filter-container{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+.filter-button{
+    height: 40px;
+    border-radius: 8px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5%;
+    background-color: black;
+    color: white;
+    font-family: 'Manrope', sans-serif;
+}
+
+.filter-modal{
+    margin-top: 30px;
+    
+    width: 20%;
+    background-color: rgb(227, 224, 224);
+    position: absolute;
+    margin-left: 100px;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 30px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.filter-modal h2{
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(40, 40, 40);
+}
+
+.gender{
+    font-size: 15px;
+    margin-top: 18px;
+    color: rgb(63, 62, 62);
+    font-weight: 500;
+}
+
+.gender-boxes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.male-box:active{
+    background-color: black;
+    color: white;
+}
+.female-box:active{
+    background-color: black;
+    color: white;
+}
+
+.male-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid grey;
+}
+
+.male-box p{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.female-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid grey;
+}
+
+.female-box p{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.it{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid grey;
+}
+
+.it p{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+
+.management{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid grey;
+}
+
+.management p{
+    font-size: 10px;
+    text-wrap: balance;
+    font-weight: 500;
+}
+
+
+
+.sales{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid grey;
+}
+
+.sales p{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+
+.finance{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid grey;
+}
+
+.finance p{
+    font-size: 13px;
+    font-weight: 500;
+}
+.filter-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+
+.filter-submit-button-close{
+    height: 35px;
+    width: 80px;
+    border: 1px solid black;
+    color: rgb(29, 29, 29);
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.filter-submit-button-close p{
+    font-size: 13px;
+}
+
+
+.filter-submit-button{
+    height: 35px;
+    width: 80px;
+    background-color: rgb(2, 2, 2);
+    color: white;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.filter-submit-button p{
+    font-size: 13px;
+}
+
+
+
 
 @media screen and (max-width: 480px) {
     .row{
         width: 100%;
+    }
+
+    .filter-modal{
+        width: 70%;
+        margin-left: 20px;
     }
   }

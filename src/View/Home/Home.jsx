@@ -7,17 +7,7 @@ import Upernav from '../../components/UpeerNav/Upernav'
 import axios from "axios"
 const Home = () => {
 
-  const FetchUser = async()=>{
-    try {
-      const response = await axios.get("")
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  useEffect(()=>{
-
-  })
+  
   return (
    <>
    <div className="user-nav-bar">

@@ -1,26 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import "./User.css"
-import Filter from '../Filter/Filter';
 import {getUser, onNextPage} from "../../store/slices/Userslice"
 import {useDispatch , useSelector} from "react-redux"
+import "../Filter/Filter.css"
 
 import axios from "axios"
 const User = () => {
           const data = useSelector((state)=> state.user);
-    console.log("this is new data" , data[0]);
+          const [ViewFilterOption, setViewFilterOption] = useState(false);
+        const dispatch = useDispatch();
+        const [pageNo, setpageNo] = useState(1);
+
+        const [domain, setdomain] = useState("");
+        const [gender, setgender] = useState("");
+        const [available, setavailable] = useState("");
+
+
 
     
-
-    const dispatch = useDispatch();
-    const [pageNo, setpageNo] = useState(1);
-    
-
+        
 
    
 
-      const fetchPaginationUser = async(pageNo)=>{
+      const fetchPaginationUser = async(pageNo , domain , gender , available)=>{
+
         try {
-            const response = await axios.get("https://heliverse-assignment-server.onrender.com/api/user?page="+pageNo);
+            const response = await axios.get("https://heliverse-assignment-server.onrender.com/api/users/?page="+pageNo+"&domain="+domain+"&gender="+gender+"&available="+available);
             console.log(response.data);
             dispatch(onNextPage(response.data));
         } catch (error) {
@@ -29,10 +34,18 @@ const User = () => {
       }
 
         useEffect(()=>{
-            fetchPaginationUser(1);
+            fetchPaginationUser(1 , domain , gender , available);
         } , []);
+
+
+       const handleSubmit =(domain , gender , available)=>{
+        
+        fetchPaginationUser(1 , domain , gender , available);
+            console.log(domain , gender , available);
+        }
     
   
+
 
   return (
     <div className="user-section">
@@ -40,8 +53,86 @@ const User = () => {
             <h2>Checkout All Users</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
+<div className="filter-container">
+    
+    {
+        ViewFilterOption===true ? <div className="filter-modal">
+            <h3>Choose filter option</h3>
+            <p className='gender'>Geneder</p>
 
-        <Filter/>
+            <div className="gender-boxes">
+                <div onClick={()=>{
+                    setgender("Male")
+                }} className="male-box">
+                    <p>Male</p>
+                </div>
+                <div onClick={()=>{
+                    setgender("Female");
+                }} className="female-box">
+                    <p>Female</p>
+                </div>
+            </div>
+            <p className='gender'>Domain</p>
+              
+                <div className="gender-boxes">
+                    <div onClick={()=>{
+                        setdomain("IT")
+                    }} className="it">
+                        <p>IT</p>
+                    </div>
+                    <div onClick={()=>{
+                        setdomain("Management")
+                    }} className="management">
+                        <p>Management</p>
+                    </div>
+                    <div onClick={()=>{
+                        setdomain("Finance")
+                    }} className="finance">
+                        <p>Finance</p>
+                    </div>
+                    <div onClick={()=>{
+                        setdomain("Sales")
+                    }} className="sales">
+                        <p>Sales</p>
+                    </div>
+                </div>
+            <p className='gender'>Availability</p>
+              
+                <div className="gender-boxes">
+                    <div onClick={()=>{
+                        setavailable(true);
+                    }} className="it">
+                        <p>Available</p>
+                    </div>
+                    <div onClick={()=>{
+                        setdomain(false)
+                    }} className="management">
+                        <p>Unavailable</p>
+                    </div>
+                    
+                </div>
+
+               <div className="filter-buttons">
+               <div onClick={()=>{
+                handleSubmit(domain , gender , available);
+               }} className="filter-submit-button">
+                    <p>Submit</p>
+                </div>
+               <div onClick={()=>{
+                setViewFilterOption(false)
+               }} className="filter-submit-button-close">
+                    <p>Close</p>
+                </div>
+               </div>
+            
+        </div> :<div onClick={()=>{
+            setViewFilterOption(true);
+        }} className="filter-button">
+                    <p>Filter</p>
+                </div>
+    }
+
+</div>
        
         <div className="user-table">
           {
