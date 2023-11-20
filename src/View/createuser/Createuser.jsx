@@ -24,7 +24,7 @@ const Createuser = ({close}) => {
                 available:Available
             }
             const response = await axios.post("https://heliverse-assignment-server.onrender.com/api/users" , bodyParameter);
-            console.log(response.data);
+            close();
         } catch (error) {
             console.log(error);
         }
@@ -33,7 +33,7 @@ const Createuser = ({close}) => {
     
 
     const handleSubmit = ()=>{
-        
+        alert("Please Wait");
         try {
             let formdata = new FormData();
             formdata.append("file" , Image[0]);

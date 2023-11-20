@@ -21,6 +21,7 @@
     color: rgb(45, 45, 45);
 }
 .team-heading P{
+    text-wrap: balance;
     font-size: 15px;
     color: rgb(73, 73, 73);
     font-family: 'Manrope', sans-serif;

@@ -12,10 +12,8 @@ const Createteam = ({close}) => {
   const data = useSelector((state)=> state.user);
 
   const HandleSubmit = async()=>{
-    console.log("worker");
     try {
       const response = await axios.get("https://heliverse-assignment-server.onrender.com/api/user/search?first_name="+seatcQuery+"&page=1");
-      console.log("this is search qwwury data",response.data);
       setSearchedUser(response.data);
     } catch (error) {
       console.log(error);
@@ -34,7 +32,8 @@ const Createteam = ({close}) => {
 
       }
       const response = await axios.post("https://heliverse-assignment-server.onrender.com/api/team" , bodyParameter);
-      console.log(response.data);
+      close();
+      alert("Team Added");
     } catch (error) {
       console.log(error);
     }
