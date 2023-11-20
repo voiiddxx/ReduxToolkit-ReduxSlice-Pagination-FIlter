@@ -47,3 +47,45 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.team-submit-button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.extra{
+    height: 100%;
+  
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.extra::-webkit-scrollbar{
+    display: none;
+}
+
+.user-card{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.user-card img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+
+.user-card p{
+    font-size: 15px;
+    margin-top: 12px;
+}
