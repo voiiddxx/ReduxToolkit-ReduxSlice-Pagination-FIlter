@@ -6,10 +6,14 @@ const UserSlice = createSlice({
     reducers:{
         getUser(state , action){
             state.push(action.payload)
+        },
+        onNextPage(state , action){
+            state.pop();
+            state.push(action.payload);
         }
     }
 });
 
-export const {getUser} = UserSlice.actions;
+export const {getUser , onNextPage} = UserSlice.actions;
 
 export default UserSlice.reducer;

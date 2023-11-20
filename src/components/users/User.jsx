@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import "./User.css"
 import Filter from '../Filter/Filter';
-import {getUser} from "../../store/slices/Userslice"
+import {getUser, onNextPage} from "../../store/slices/Userslice"
 import {useDispatch , useSelector} from "react-redux"
 
 import axios from "axios"
 const User = () => {
-    const data = useSelector((state)=> state.user)
-   console.log(data[0]);
+          const data = useSelector((state)=> state.user);
+    console.log("this is new data" , data[0]);
+
     
 
     const dispatch = useDispatch();
@@ -15,21 +16,22 @@ const User = () => {
     
 
 
-    const FetchUser = async()=>{
+   
+
+      const fetchPaginationUser = async(pageNo)=>{
         try {
-          const response = await axios.get("https://heliverse-assignment-server.onrender.com/api/user?page="+pageNo);
-          console.log(response.data);
-          dispatch(getUser(response.data));
+            const response = await axios.get("https://heliverse-assignment-server.onrender.com/api/user?page="+pageNo);
+            console.log(response.data);
+            dispatch(onNextPage(response.data));
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
       }
 
-      useEffect(()=>{
-        FetchUser();
-      } , [])
+        useEffect(()=>{
+            fetchPaginationUser(1);
+        } , []);
     
-
   
 
   return (
@@ -56,26 +58,29 @@ const User = () => {
         </div>
         <div className="user-bottom">
             <div className="page">
-                <div onClick={()=>{
-                    setpageNo(pageNo+1);
-                }} className="decrement">
-                    <h1>+</h1>
-                </div>
-                <div className="page_no">
-                    <h2>{pageNo}</h2>
-                </div>
-                <div onClick={()=>{
+            <div onClick={()=>{
                     if(pageNo>1){
                         setpageNo(pageNo-1);
                     }
+                    fetchPaginationUser(pageNo-1);
                 }} className="increment">
                     <h2>-</h2>
                 </div>
                 
+                <div className="page_no">
+                    <h2>{pageNo}</h2>
+                </div>
+                <div onClick={()=>{
+                    setpageNo(pageNo+1);
+                    console.log(pageNo);
+                    fetchPaginationUser(pageNo+1);
+                }} className="decrement">
+                    <h1>+</h1>
+                </div>
+               
+                
             </div>
-            <div className="filter">
-                <p>Filter</p>
-            </div>
+        
         </div>
     </div>
   )
