@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import "./Createuser.css"
 
-const Createuser = () => {
+const Createuser = ({close}) => {
     const [Gender, setGender] = useState("");
     const [Domain, setDomain] = useState("");
     const [Available, setAvailable] = useState(null);
     
   return (
    <>
-   <div className="create-close"></div>
+   <div onClick={close} className="create-close"></div>
    <div className="create-user-main">
     <h2>Create User</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>

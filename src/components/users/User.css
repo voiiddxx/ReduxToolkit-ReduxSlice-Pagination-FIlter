@@ -19,12 +19,12 @@
     font-size: 18px;
 }
 .user-heading p{
-    margin-top: -10px;
     font-size: 15px;
     color: rgb(66, 66, 66);
 } 
 
 .user-table{
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

@@ -1,8 +1,36 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./User.css"
+import Filter from '../Filter/Filter';
+import {getUser} from "../../store/slices/Userslice"
+import {useDispatch , useSelector} from "react-redux"
+
+import axios from "axios"
 const User = () => {
+    const data = useSelector((state)=> state.user)
+   console.log(data[0]);
+    
+
+    const dispatch = useDispatch();
     const [pageNo, setpageNo] = useState(1);
     
+
+
+    const FetchUser = async()=>{
+        try {
+          const response = await axios.get("https://heliverse-assignment-server.onrender.com/api/user?page="+pageNo);
+          console.log(response.data);
+          dispatch(getUser(response.data));
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      useEffect(()=>{
+        FetchUser();
+      } , [])
+    
+
+  
 
   return (
     <div className="user-section">
@@ -11,49 +39,20 @@ const User = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
 
+        <Filter/>
+       
         <div className="user-table">
-            <div className="row">
-                <img src="https://www.shutterstock.com/image-photo/young-mixed-race-woman-isolated-260nw-1960001155.jpg" alt="thisisimageofperson" />
-                <h2>Alex carry</h2>
-                <p>Finance</p>
+          {
+            data[0] ? data[0].map((curr)=>{
+                return <div className="row">
+                <img src={curr.avatar} alt="thisisimageofperson" />
+                <h2>{curr.first_name}</h2>
+                <p>{curr.domain}</p>
                 <p>Female</p>
-                <p>Available</p>
+                <p>{curr.available}</p>
             </div>
-            <div className="row">
-                <img src="https://www.shutterstock.com/image-photo/young-mixed-race-woman-isolated-260nw-1960001155.jpg" alt="thisisimageofperson" />
-                <h2>Alex carry</h2>
-                <p>Finance</p>
-                <p>Female</p>
-                <p>Available</p>
-            </div>
-            <div className="row">
-                <img src="https://www.shutterstock.com/image-photo/young-mixed-race-woman-isolated-260nw-1960001155.jpg" alt="thisisimageofperson" />
-                <h2>Alex carry</h2>
-                <p>Finance</p>
-                <p>Female</p>
-                <p>Available</p>
-            </div>
-            <div className="row">
-                <img src="https://www.shutterstock.com/image-photo/young-mixed-race-woman-isolated-260nw-1960001155.jpg" alt="thisisimageofperson" />
-                <h2>Alex carry</h2>
-                <p>Finance</p>
-                <p>Female</p>
-                <p>Available</p>
-            </div>
-            <div className="row">
-                <img src="https://www.shutterstock.com/image-photo/young-mixed-race-woman-isolated-260nw-1960001155.jpg" alt="thisisimageofperson" />
-                <h2>Alex carry</h2>
-                <p>Finance</p>
-                <p>Female</p>
-                <p>Available</p>
-            </div>
-            <div className="row">
-                <img src="https://www.shutterstock.com/image-photo/young-mixed-race-woman-isolated-260nw-1960001155.jpg" alt="thisisimageofperson" />
-                <h2>Alex carry</h2>
-                <p>Finance</p>
-                <p>Female</p>
-                <p>Available</p>
-            </div>
+            }) : <h1>Data Loadin Please wait</h1>
+          }
         </div>
         <div className="user-bottom">
             <div className="page">

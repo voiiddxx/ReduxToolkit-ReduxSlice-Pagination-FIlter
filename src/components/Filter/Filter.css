@@ -1,0 +1,45 @@
+.filter-main{
+    height: 8vh;
+    width: 100%;
+    margin-top: 20px;
+    
+}
+
+.filter-box{
+    height: 100%;
+    margin-left: 70px;
+    display: flex;
+    gap: 20px;
+    
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100px;
+    background-color: rgb(195, 195, 195);
+    border-radius: 5px;
+}
+
+.box p{
+    
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.selected-box-filter{
+    
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+}

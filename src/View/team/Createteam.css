@@ -1,0 +1,49 @@
+.search{
+    margin-top: 15px;
+}
+.search-input{
+    height: 40px;
+    padding-left: 15px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    border: 1px solid black;
+    width: 50%;
+    font-family: 'Manrope', sans-serif;
+}
+
+.submit-button-search{
+    height: 40px;
+    width: 30%;
+    margin-left: 10px;
+    border: none;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    border-radius: 5px;
+    
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+}
+
+.button-team{
+    height: 50px;
+    width: 80%;
+    background-color: rgb(15, 15, 15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.button-team p{
+    font-size: 15px;
+    font-family: 'Manrope', sans-serif;
+    color: white;
+}
+
+.team-submit-button{
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
